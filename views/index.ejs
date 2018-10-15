@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Flat">
+  <title><%= user.name %></title>
+</head>
+<body>
+  <div class="header">
+    <h1 class="header-item header-item-one">Profile Template App</h1>
+     <span class="header-item">
+       <a href="/">Profile</a>
+     </span>
+  </div>
+  <h2 class="user-name"><%= user.name %></h2>
+  <img src=<%= user.img%> alt="" class="user-pic">
+
+  <div class="user-info">
+    <h3>User Info</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta suscipit inventore quae quis nam, accusantium accusamus ipsum quos. Quas iusto excepturi ipsam corporis. Magni illo provident error mollitia nam a?
+    </p>
+  </div>
+
+  <h3>Friends</h3>
+  <ul>
+    <% user.friends.forEach((friend) => {%>
+      <li><%= friend %></li>
+    <% }) %>
+  </ul>
+
+  <script src="/script.js"></script>
+  
+</body>
+</html>
