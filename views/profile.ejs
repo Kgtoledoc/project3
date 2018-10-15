@@ -11,9 +11,9 @@
 </head>
 <body>
   <div class="header">
-    <h1 class="header-item header-item-one">Profile Template App</h1>
+    <% include ./layout/logo %>
      <span class="header-item">
-       <a href="/">Profile</a>
+       <a href="/">Home</a>
      </span>
   </div>
   <h2 class="user-name"><%= user.name %></h2>
@@ -25,13 +25,14 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta suscipit inventore quae quis nam, accusantium accusamus ipsum quos. Quas iusto excepturi ipsam corporis. Magni illo provident error mollitia nam a?
     </p>
   </div>
-
-  <h3>Friends</h3>
-  <ul>
-    <% user.friends.forEach((friend) => {%>
-      <li><%= friend %></li>
-    <% }) %>
-  </ul>
+  <% if(user.friends) {%>
+    <h3>Friends</h3>
+    <ul>
+      <% user.friends.forEach((friend) => {%>
+        <li><%= friend %></li>
+      <% }) %>
+    </ul>
+  <% }%>
 
   <script src="/script.js"></script>
   
